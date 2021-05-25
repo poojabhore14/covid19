@@ -34,21 +34,21 @@
           font-size: 3rem;
       }
 
-    .cor-anm img{
-          animation: cor-anm 3s linear infinite; /*  2ndimage-annimation  */
+    .leftside img{
+          animation: earth 3s linear infinite; /*  2ndimage-annimation  */
       }
    
-    @keyframes cor-anm {
+    @keyframes earth {
           0%{transform: rotate(0); }
           100%{transform: rotate(360deg); }
 
       }
 
-    .leftside img{
-          animation: earth 5s linear infinite;  /*  1stimage-annimation  */
+    .cor-anm  img{
+          animation: cor-anm 5s linear infinite;  /*  1stimage-annimation  */
       }
 
-    @keyframes earth {
+    @keyframes cor-anm {
            0%{transform: scale(.75); }
            20%{transform: scale(1); }
            40%{transform: scale(.75); }
