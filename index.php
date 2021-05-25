@@ -69,11 +69,143 @@
 <!-- Main-Header-Section-Ends -->
 
 <!-- World-Live-Updates-Starts -->
-<section class="corona-update container-fluid" id="world">
-       <div class="mb-3">
-         <h2 class="text-uppercase text-center">World Covid-19 Live Updates</h2>
+<section class=" container-fluid" id="world">
+       <div class="mb-5 corona-update">
+         <h1 class="text-uppercase text-center">World Covid-19 Live Updates</h1>
        </div>
        
+
+       <?php
+             $data = file_get_contents('https://api.covid19api.com/summary');
+             $coranalive = json_decode($data, true);
+             $statescount = count($coranalive['Global']);
+             
+           ?>
+<div class="col-md-12 ">
+    <div class="row ">
+        <div class="col-xl-4 col-lg-6">
+            <div class="card newconfirm">
+                <div class="card-statistic-3 p-4">
+                    <div class="card-icon card-icon-large"></div>
+                    <div class="mb-4">
+                        <h5 class="card-title mb-0">New Confirmed</h5>
+                    </div>
+                    <div class="row align-items-center mb-2 d-flex">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center mb-0 count">
+                            <?php echo $coranalive['Global']['NewConfirmed'];?>
+                            </h2>
+                        </div>
+                        
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            <div class="card totalconfirm">
+                <div class="card-statistic-3 p-4">
+                    <div class="card-icon card-icon-large"></div>
+                    <div class="mb-4">
+                        <h5 class="card-title mb-0">Total Confirmed</h5>
+                    </div>
+                    <div class="row align-items-center mb-2 d-flex">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center mb-0 count">
+                            <?php echo $coranalive['Global']['TotalConfirmed'];?>
+                            </h2>
+                        </div>
+                        
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-xl-4 col-lg-6">
+            <div class="card newdeath">
+                <div class="card-statistic-3 p-4">
+                    <div class="card-icon card-icon-large"></div>
+                    <div class="mb-4">
+                        <h5 class="card-title mb-0">New Deaths</h5>
+                    </div>
+                    <div class="row align-items-center mb-2 d-flex">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center mb-0 count">
+                            <?php echo $coranalive['Global']['NewDeaths'];?>
+                            </h2>
+                        </div>
+                        
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-12">
+    <div class="row ">
+<div class="col-xl-4 col-lg-6">
+            <div class="card totaldeath">
+                <div class="card-statistic-3 p-4">
+                    <div class="card-icon card-icon-large"></div>
+                    <div class="mb-4">
+                        <h5 class="card-title mb-0">Total Deaths</h5>
+                    </div>
+                    <div class="row align-items-center mb-2 d-flex">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center mb-0 count">
+                            <?php echo $coranalive['Global']['TotalDeaths'];?>
+                            </h2>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            <div class="card newrecover">
+                <div class="card-statistic-3 p-4">
+                    <div class="card-icon card-icon-large"></div>
+                    <div class="mb-4">
+                        <h5 class="card-title mb-0">New Recovered</h5>
+                    </div>
+                    <div class="row align-items-center mb-2 d-flex">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center mb-0 count">
+                            <?php echo $coranalive['Global']['NewRecovered'];?>
+                            </h2>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-lg-6">
+            <div class="card totalrecover">
+                <div class="card-statistic-3 p-4">
+                    <div class="card-icon card-icon-large"></div>
+                    <div class="mb-4">
+                        <h5 class="card-title mb-0">Total Recovered</h5>
+                    </div>
+                    <div class="row align-items-center mb-2 d-flex">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center mb-0 count">
+                            <?php echo $coranalive['Global']['TotalRecovered'];?>
+                            </h2>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        </div>
+</div>
+
+
     </section>
 
 <!-- World-Live-Updates-Ends-->
@@ -81,7 +213,7 @@
 <!-- About-Section-Starts -->
 
      <div class="container-fluid sub-section pt-5 pb-5 " id="about">
-        <div class="section-header text-center mt-4 mb-5">
+        <div class="corona-update text-center mt-4 mb-5">
           <h1>About Covid-19</h1>
         </div>
         <div class="row pt-5">
@@ -112,7 +244,7 @@
 <!-- Symptoms-Section-Starts -->
 
    <div class="container-fluid  pt-5 pb-5 " id="symptoms">
-     <div class="section-header text-center mt-4 mb-5">
+     <div class="corona-update text-center mt-4 mb-5">
          <h1>Corona-Virus Symptoms</h1>
      </div>
      <div class="container">
@@ -161,7 +293,7 @@
 <!-- Contact-Section-Starts -->
 
      <div class="container-fluid sub-section pt-5 pb-5 " id="contact">
-       <div class="section-header text-center mt-4 mb-5 text-uppercase">
+       <div class="corona-update text-center mt-4 mb-5 text-uppercase">
          <h1>Contact ASAP</h1>
        </div>
        <div class="container">
@@ -253,6 +385,19 @@
                $('html, body').animate({scrollTop:0}, '300');
                });
 
+     
+$('.count').each(function () {
+            $(this).prop('Counter',0).animate({
+             Counter: $(this).text()
+          }, 
+          {
+             duration: 4000,
+             easing: 'swing',
+             step: function (now) {
+               $(this).text(Math.ceil(now));
+            }
+          });
+        });    
 
 
           
